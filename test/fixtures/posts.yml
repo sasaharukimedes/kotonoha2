@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  dear: MyString
+  content: MyText
+  from: MyString
+  sender_id: 1
+  receiver_id: 1
+  user_id: 1
+
+two:
+  dear: MyString
+  content: MyText
+  from: MyString
+  sender_id: 1
+  receiver_id: 1
+  user_id: 1
