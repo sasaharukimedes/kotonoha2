@@ -70,4 +70,16 @@ Rails.application.configure do
 
   #追加分
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    port:                 587,
+    address:              'smtp.gmail.com',
+    domain:               'smtp.gmail.com',
+    user_name:            ENV['WELCOME_MAILER_ADDRESS'],
+    password:             ENV['WELCOME_MAILER_PASSWORD'],
+    authentication:       'plain',
+    enable_starttls_auto: true
+  }
+
 end
