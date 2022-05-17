@@ -1,6 +1,10 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!
 
+  def new
+    @user = User.new
+  end
+
   def initialize
     @user.received_at = params[received_at: :Time.now]
   end
@@ -8,6 +12,7 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
+    @user.received_at = params[received_at: :Time.now]
     #params[:user]実装は終わっていないことに注意!
     #マスアサインメント脆弱性
     if @user.save
