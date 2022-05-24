@@ -1,15 +1,11 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!
 
-  def initialize
-    @user.received_at = params[received_at: :Time.now]
-  end
-
-
   def create
     @user = User.new(user_params)
     #params[:user]実装は終わっていないことに注意!
     #マスアサインメント脆弱性
+    @user.received_at = Time.now
     if @user.save
       @user.send_activation_email
       flash[:info] = "Please check your email to activate your account."
@@ -42,7 +38,7 @@ class UsersController < ApplicationController
 
   private
     def user_params
-      params.require(:user).permit(:name, :email, :birthday, :received_at, )
+      params.require(:user).permit(:name, :email, :birthday)
     end
 
 end
