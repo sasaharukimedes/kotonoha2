@@ -20,7 +20,7 @@ class PostsController < ApplicationController
     @receiver = User.where.not(id:current_user.id).order(:received_at).first
     @post.receiver_id = @receiver.id
     if @post.save
-      @receiver.update!(received_at: Time.now)
+      @receiver.received_at = Time.now
       @post.create_notification_by(current_user)
       flash[:notice] = "手紙が作られました!"
       redirect_to home_path
