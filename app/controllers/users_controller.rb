@@ -6,6 +6,7 @@ class UsersController < ApplicationController
     @user.received_at = Time.now
     #params[:user]実装は終わっていないことに注意!
     #マスアサインメント脆弱性
+    @user.received_at = Time.now
     if @user.save
       @user.send_activation_email
       flash[:info] = "Please check your email to activate your account."
