@@ -1,7 +1,7 @@
 #追加分Rails7+devise参照
 class TurboFailureApp < Devise::FailureApp
   def respond
-    if request_format = :turbo_stream
+    if request_format == :turbo_stream
       redirect
     else
       super

@@ -1,20 +1,21 @@
-<div class="row">
-  <div class="col-md-6">
-    <h2 class="pb-4"><%= t('.forgot_your_password') %></h2>
+<div class="devise">
+  <div class="card col-sm-6 mx-auto mt-5">
+    <div class="card-body">
+      <h2 class="mt-1 mb-3"><%= t('.forgot_your_password') %></h2>
 
-    <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-      <%= render "devise/shared/error_messages", resource: resource %>
+      <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+        <%= render "devise/shared/error_messages", resource: resource %>
 
-      <div class="mb-4">
-	<%= f.label :email, class: "form-label" %>
-	<%= f.email_field :email, autofocus: true, autocomplete: 'email', class: 'form-control' %>
-      </div>
+        <div class="form-group">
+          <%= f.label :email %><br />
+          <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+        </div>
 
-      <div class="mb-4">
-	<%= f.submit t('.send_me_reset_password_instructions'), class: 'btn btn-primary' %>
-      </div>
-    <% end %>
-
-    <%= render "devise/shared/links" %>
+        <div class="actions">
+          <%= f.submit t('.send_me_reset_password_instructions'), :class => "btn btn-primary btn-block" %>
+        </div>
+      <% end %>
+      <%= render "devise/shared/links" %>
+    </div>
   </div>
 </div>

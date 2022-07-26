@@ -1,13 +1,29 @@
 <% provide(:title, "HowToUse") %>
 
-  <div  class="col-sm-auto">
-    <h2>遊び方</h2>
-    <p>
-      1) まずは、自分で手紙を書いてみましょう！（宛名・本文・差出人、好きに書いてね！）
-      <br>2) 書けたら投函してみましょう。きっと誰かのもとに届きます！
-      <br>3) もし自分が誰かの手紙を受け取ったら、ぜひ何か返事を書いてあげましょう！
-      <br>4) 手紙のやりとりは、“一度”だけ！
-      <br>5) 出した手紙・返事は皆さんで削除はできません。記録が残ります、言葉には気をつけて！
-      <br>最後にですが、みなさんが楽しく遊べますように! ( from 開発者 )
-    </p>
-  </div>
+<div class="play col-sm-auto">
+    <div class="play-intro">
+      <h2>コトノハって？</h2>
+      <p>誰も傷つかない，<br>いじめのないSNSです!</p>
+    </div>
+    <div class="play-c">
+      <div class="play-part">
+        <%= image_tag 'letter.png'%>
+        <h2>手紙を書こう！</h2>
+        <p>今の気持ちを書いてみよう！<br>他の誰か一人にだけ届くよ</p>
+      </div>
+    </div>
+    <div class="play-c">
+      <div class="play-part">
+        <%= image_tag 'post.png' %>
+        <h2>手紙が来たら返事を書こう！</h2>
+        <p>ただし，一度しか返事はできないよ！<br>削除もできないから慎重にね！</p>
+      </div>
+    </div>
+    <div class="play-c">
+      <div class="play-part">
+        <%= image_tag 'connection.png' %>
+        <h2>遊ぶ時の約束！</h2>
+        <p>大切な人に話しかけるような優しい言葉で，<br>繋がりを感じて，<br>楽しく遊んでね！</p>
+      </div>
+    </div>
+</div>

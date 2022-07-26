@@ -42,6 +42,9 @@
   padding: 30px;
   box-shadow: 0 2px 6px #c1ced7;
   overflow: hidden;
+  background-image: url('letter-back.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
 
 }
 
@@ -91,8 +94,8 @@
 /* posts/new ================================ */
 
 .posts-new .form-body{
-  background-image: url(/ocean-letter.jpeg); background-size: cover; background-repeat: no-repeat;
-
+  background-image: url('letter-back.jpg');
+  background-size: 100% 100%;
 }
 
 .posts-new textarea {

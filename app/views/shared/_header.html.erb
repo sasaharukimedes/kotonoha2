@@ -1,12 +1,12 @@
-<header>
+<header class="page-header wrapper">
   <nav>
-    <nav class="navbar navbar-expand-md sticky-top navbar-dark" style="background-color: #ff9933;">
+    <nav class="navbar navbar-expand-md sticky-top navbar-dark justify-content-around">
       <a class="navbar-brand" href="/">コトノハ</a>
       <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#bs-navi" aria-controls="bs-navi" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
 
-      <div class="collapse navbar-collapse" id="bs-navi">
+      <div class="collapse navbar-collapse " id="bs-navi">
         <ul class="navbar-nav">
           <% if user_signed_in? %>
             <li class="nav-item active">
@@ -22,6 +22,9 @@
               <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'nav-link'  %>
             </li>
           <% else %>
+            <li class="nav-item active">
+              <%= link_to "遊び方", play_path, class: "nav-link" %>
+            </li>
             <li class="nav-item active">
               <%= link_to "新規登録", new_user_registration_path, class: 'nav-link' %>
             </li>

@@ -8,8 +8,8 @@ Rails.application.routes.draw do
 
   root 'pages#home'
   get 'home', to: 'pages#home'
-  #get 'about', to: 'pages#about'
-  #get 'play', to: 'pages#play'
+  get 'about', to: 'pages#about'
+  get 'play', to: 'pages#play'
 
   resources :posts, shallow: true do
     resources :replies

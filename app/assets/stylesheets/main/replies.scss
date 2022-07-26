@@ -43,8 +43,8 @@
   background-color: white;
   box-shadow: 0 2px 6px #c1ced7;
   overflow: hidden;
-  background-image: url(/ocean-letter.jpeg); background-size: cover; background-repeat: no-repeat;
-
+  background-image: url('letter-back.jpg');
+  background-size: 100% 100%;
 }
 
 .replies-show-item img {
@@ -87,8 +87,9 @@
 /* replies/new ================================ */
 
 .replies-new .form-body{
-  background-image: url(/ocean-letter.jpeg); background-size: cover; background-repeat: no-repeat;
-
+  background-image: url('letter-back.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .replies-new textarea {
