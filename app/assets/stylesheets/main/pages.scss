@@ -101,7 +101,7 @@
   color:#FFF7EB;
 
   background-image: url('zero-home.jpg');
-  background-size: 100% ;
+  background-size: 100% 100%;
 
   /*background-image: image-url('app/assets/images/canva.jpg');
   background-image: url('about.jpg');
@@ -109,23 +109,27 @@
   background-repeat: no-repeat; */
 }
 
-.play-intro h2{
+.play-intro h1{
   font-size: 50px;
   color:#09e6d7
 }
 
 .play-intro p{
+  font-size: 30px;
+}
+
+.play-sub h3{
+  font-size: 50px;
+  color:#09e6d7
+}
+
+.play-sub p{
   font-size: 20px;
+  color: black;
 }
 
-.play-c h2{
-  color: #09e6d7;
-}
 
-.play-c{
-  display: flex;
-  justify-content: space-around;
-}
+
 
 
 /* フォーム================================ */

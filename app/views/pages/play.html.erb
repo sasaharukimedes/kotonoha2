@@ -1,29 +1,35 @@
 <% provide(:title, "HowToUse") %>
 
 <div class="play col-sm-auto">
-    <div class="play-intro">
-      <h2>コトノハって？</h2>
-      <p>誰も傷つかない，<br>いじめのないSNSです!</p>
-    </div>
-    <div class="play-c">
-      <div class="play-part">
-        <%= image_tag 'letter.png'%>
-        <h2>手紙を書こう！</h2>
-        <p>今の気持ちを書いてみよう！<br>他の誰か一人にだけ届くよ</p>
+  <div class="play-intro">
+    <h1>コトノハって？</h1>
+    <p>誰も傷つかない，<br>いじめのないSNSです!</p>
+  </div>
+
+  <div class="row">
+    <div class="play-sub card col-sm-3 mx-auto mt-5">
+      <%= image_tag 'letter.png'%>
+      <div class="card-body">
+        <h3>手紙を書こう！</h3>
+        <p>今の気持ちを書いてみよう！<br>他のユーザー誰か一人にだけ届くよ！</p>
       </div>
     </div>
-    <div class="play-c">
-      <div class="play-part">
-        <%= image_tag 'post.png' %>
-        <h2>手紙が来たら返事を書こう！</h2>
+
+    <div class="play-sub card col-sm-3 mx-auto mt-5">
+      <%= image_tag 'post.png' %>
+      <div class="card-body">
+        <h3>手紙が来たら返事を書こう！</h3>
         <p>ただし，一度しか返事はできないよ！<br>削除もできないから慎重にね！</p>
       </div>
     </div>
-    <div class="play-c">
-      <div class="play-part">
-        <%= image_tag 'connection.png' %>
-        <h2>遊ぶ時の約束！</h2>
+
+    <div class="play-sub card col-sm-3 mx-auto mt-5">
+      <%= image_tag 'connection.png' %>
+      <div class="card-body">
+        <h3>遊ぶ時の約束！</h3>
         <p>大切な人に話しかけるような優しい言葉で，<br>繋がりを感じて，<br>楽しく遊んでね！</p>
       </div>
     </div>
+
+  </div>
 </div>
