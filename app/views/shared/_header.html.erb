@@ -1,39 +1,33 @@
-<header class="page-header wrapper">
-  <nav>
-    <nav class="navbar navbar-expand-md sticky-top navbar-dark justify-content-around">
-      <a class="navbar-brand" href="/">コトノハ</a>
-      <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#bs-navi" aria-controls="bs-navi" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <div class="collapse navbar-collapse " id="bs-navi">
-        <ul class="navbar-nav">
-          <% if user_signed_in? %>
-            <li class="nav-item active">
-              <%= link_to "手紙を書く", new_post_path, class: 'nav-link', data: {"turbolinks" => false} %>
-            </li>
-            <li class="nav-item active">
-              <%= link_to "手紙を読む", notifications_path, class: 'nav-link' %>
-            </li>
-            <li class="nav-item active">
-              <%= link_to 'アカウント編集', edit_user_registration_path, class: 'nav-link' %>
-            </li>
-            <li class="nav-item active">
-              <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'nav-link'  %>
-            </li>
-          <% else %>
-            <li class="nav-item active">
-              <%= link_to "遊び方", play_path, class: "nav-link" %>
-            </li>
-            <li class="nav-item active">
-              <%= link_to "新規登録", new_user_registration_path, class: 'nav-link' %>
-            </li>
-            <li class="nav-item active">
-              <%= link_to "ログイン", new_user_session_path, class: 'nav-link' %>
-            </li>
-          <% end %>
-        </ul>
-      </div>
-    </nav>
-  </nav>
+<header class="header wrapper">
+  <div class="navtext-container">
+    <div class="navtext">コトノハ</div>
+  </div>
+  <input type="checkbox" class="menu-btn" id="menu-btn">
+  <label for="menu-btn" class="menu-icon"><span class="navicon"></span></label>
+  <ul class="menu">
+    <% if user_signed_in? %>
+      <li>
+        <%= link_to "手紙を書く", new_post_path, class: 'nav-link', data: {"turbolinks" => false} %>
+      </li>
+      <li>
+        <%= link_to "手紙を読む", notifications_path, class: 'nav-link' %>
+      </li>
+      <li>
+        <%= link_to 'アカウント編集', edit_user_registration_path, class: 'nav-link' %>
+      </li>
+      <li>
+        <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'nav-link'  %>
+      </li>
+    <% else %>
+      <li>
+        <%= link_to "遊び方", play_path, class: "nav-link" %>
+      </li>
+      <li>
+        <%= link_to "新規登録", new_user_registration_path, class: 'nav-link' %>
+      </li>
+      <li>
+        <%= link_to "ログイン", new_user_session_path, class: 'nav-link' %>
+      </li>
+    <% end %>
+  </ul>
 </header>
