@@ -6,12 +6,10 @@
   </head>
 
   <body>
-    <div id="home" class="big-bg">
-      <%= render 'shared/header' %>
-      <%= render 'shared/flashes' %>
-      <main role = "container">
-        <%= yield %>
-      </main>
-    </div>
+    <%= render 'shared/header' %>
+
+    <main role = "container">
+      <%= yield %>
+    </main>
   </body>
 </html>

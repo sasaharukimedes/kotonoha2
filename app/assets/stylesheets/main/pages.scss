@@ -194,6 +194,17 @@
 }
 */
 
+.flash {
+  z-index: 10;
+  color: white;
+  text-align: center;
+  &__alert{
+    background-color: red;
+  }
+  &__notice {
+    background-color: blue;
+  }
+}
 
 
 /* top ================================ */
@@ -261,7 +272,7 @@
   color:#FFF7EB;
 
   background-image: url('zero-home.jpg');
-  background-size: 100% 100%;
+  background-size: cover;
 
   /*background-image: image-url('app/assets/images/canva.jpg');
   background-image: url('about.jpg');
