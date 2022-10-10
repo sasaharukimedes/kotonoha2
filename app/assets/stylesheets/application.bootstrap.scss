@@ -1,7 +1,9 @@
 @use 'bootstrap/scss/bootstrap';
 @use 'bootstrap-icons/font/bootstrap-icons';
 
+@use './main/apps.scss';
 @use './main/notifications.scss';
 @use './main/pages.scss';
 @use './main/posts.scss';
 @use './main/replies.scss';
+

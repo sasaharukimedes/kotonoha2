@@ -22,7 +22,7 @@ class RepliesController < ApplicationController
       #通知メソッドの呼び出し
       @reply.create_notification_by(current_user)
       flash[:notice] = "返事が作られました!"
-      redirect_to home_path
+      redirect_to root_path
     else
       render "new"
     end

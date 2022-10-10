@@ -6,9 +6,7 @@ Rails.application.routes.draw do
     delete 'signout', to: 'devise/sessions#destroy', as: :destroy_user_session
   end
 
-  root 'pages#home'
-  get 'home', to: 'pages#home'
-  get 'about', to: 'pages#about'
+  root 'pages#play'
   get 'play', to: 'pages#play'
 
   resources :posts, shallow: true do

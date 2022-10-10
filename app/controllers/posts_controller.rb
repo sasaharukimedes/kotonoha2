@@ -23,7 +23,7 @@ class PostsController < ApplicationController
       @receiver.received_at = Time.now
       @post.create_notification_by(current_user)
       flash[:notice] = "手紙が作られました!"
-      redirect_to home_path
+      redirect_to root_path
     else
       render "new"
     end
