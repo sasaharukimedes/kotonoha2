@@ -26,18 +26,22 @@
 
 .play-intro{
   background-image: url('zero-home.jpg');
-  background-size: 100% 100%;
+  background-size: cover;
   margin: 0;
   padding: 0;
 }
 
 .play-intro h1{
+  padding-top: 30px;
   font-size: 50px;
   color: #fff7eb;
 }
 
 .play-intro p{
+  padding-top: 20px;
   font-size: 30px;
+  text-align: left;
+  display: inline-block;
 }
 
 .play-sub{
