@@ -1,11 +1,16 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!
 
+  def new
+    @user = User.new
+  end
+
   def create
     @user = User.new(user_params)
     #params[:user]実装は終わっていないことに注意!
     #マスアサインメント脆弱性
-    @user.received_at = Time.now
+    #user.rbに書けば以下いらない？？
+    #@user.received_at = Time.now
     if @user.save
       @user.send_activation_email
       flash[:info] = "Please check your email to activate your account."

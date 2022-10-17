@@ -5,6 +5,8 @@ class User < ApplicationRecord
         :recoverable, :rememberable, :validatable,
         :confirmable, :lockable, :timeoutable, :trackable
 
+  attribute :received_at, :datetime, default: -> { Time.now }
+
   has_many :posts, dependent: :destroy
 
   validates :name, presence: true
