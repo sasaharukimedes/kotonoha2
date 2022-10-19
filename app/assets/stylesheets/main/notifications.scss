@@ -1,6 +1,20 @@
 // Place all the styles related to the notifications controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+.notification{
+  padding: 20px 0 20px;
+  text-align: center;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: auto;
+  min-height: 100%;
+  color:#FFF7EB;
+
+  background-image: url('zero-home.jpg');
+  background-size: 100% 100%;
+}
+
 
 .notifications-index-item {
   padding: 20px 30px;

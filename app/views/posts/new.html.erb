@@ -1,3 +1,5 @@
+<% provide(:title, "WriteLetter") %>
+
 <div class="post posts-new">
   <h1 class="form-heading">手紙を書く</h1>
   <%=  form_with scope: :post, url: posts_path, model: @post, local: true do |form| %>
