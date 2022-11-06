@@ -11,7 +11,7 @@ class User < ApplicationRecord
 
   validates :name, presence: true
   validates :birthday, presence: true
-  #validates :received_at, presence: true
+  validates :received_at, presence: true
 
 
   #アクティブで自分からの通知パッシブは他人から

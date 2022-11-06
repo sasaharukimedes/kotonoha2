@@ -1,7 +1,6 @@
-
 /* post ================================ */
 .post {
-  padding: 200px 0 200px;
+  padding: 150px 0 200px;
   text-align: center;
   position: absolute;
   top: 0;
@@ -59,7 +58,7 @@
 
 .posts-show-item p span {
   display: block;
-  margin-bottom: 2.0em;
+  margin-bottom: 1.5em;
 }
 .posts-show-item p span:first-child {
   text-align: left;
@@ -80,46 +79,27 @@
 
 .posts-new .form-body{
   background-image: url('letter-back.jpg');
-  background-size: 100% 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .posts-new textarea {
-  font-size: 20px;
-  font-family: Arial, Helvetica, sans-serif;
-  padding: 10px;
-  min-height: 140px;
+  font-size: 15px;
+  min-height: 180px;
   border: 1px solid rgb(216, 218, 223);
   resize: none;
-  background-image:
-    repeating-linear-gradient(
-      #FFEACE,
-      #FFEACE calc(1.5rem - 1px),
-      #ced4da calc(1.5rem - 1px),
-      #ced4da 1.5rem,
-      #FFEACE 1.5rem
-    );
+  background-image: linear-gradient(90deg, transparent 0%, transparent 50%, #fff 50%, #fff 100%), /* 点線1の色 */
+                    linear-gradient(180deg, #ccc 1px, transparent 1px); /* 点線2の色と太さ */
+  background-size: 8px 100%, /* 点線1のサイズ */
+                   100% 1.5em; /* 点線2のサイズ */
+  line-height: 1.5em; /* 文字の高さ */
+  padding-bottom: 1.5px; /* 最終行の下にも罫線を引く */
   background-origin: content-box;
-  background-clip: content-box;
-  background-attachment: local;
-}
-
-
-input[type="text"] {
-  background-image:
-    repeating-linear-gradient(
-      #FFEACE,
-      #FFEACE calc(1.5rem - 1px),
-      #ced4da calc(1.5rem - 1px),
-      #ced4da 1.5rem,
-      #FFEACE 1.5rem
-    );
-  background-origin: content-box;
-  background-clip: content-box;
   background-attachment: local;
 }
 
 .posts-new textarea::-webkit-input-placeholder {
-  font-size: 20px;
+  font-size: 15px;
   opacity: 0.5;
 }
 

@@ -1,0 +1,28 @@
+<% visitor = notification.visitor %>
+<% visited = notification.visited %>
+<% if notification.checked == false %>
+  <div class="card">
+    <div class="card-body">
+      <div class="d-flex">
+        <div class="notice-wrapper">
+          <%= visitor.name %>
+          さんが
+          <% case notification.action %>
+          <% when 'post' then %>
+            あなたに
+            <%= link_to '手紙', notification.post, class: 'btn btn-link notice-link' %>
+            を送りました。
+            <%= link_to I18n.t('notice.read'),notification_path(notification.id),method: :put, class: 'btn btn-link notice-link' %>
+          <% when 'reply' %>
+            <%= link_to '返事', notification.reply, class: 'btn btn-link notice-link' %>
+            をくれました。
+            <%= link_to I18n.t('notice.read'),notification_path(notification.id),method: :put, class: 'btn btn-link notice-link' %>
+          <% end %>
+          <div class="time">
+            <%= notification.how_long_ago %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
