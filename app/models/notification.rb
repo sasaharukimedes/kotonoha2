@@ -1,6 +1,6 @@
 class Notification < ApplicationRecord
 
-  default_scope -> { order(created_at: :desc).limit(10) }
+  #default_scope -> { order(created_at: :desc).limit(10) }
   belongs_to :post, optional: true
   belongs_to :reply, optional: true
 
