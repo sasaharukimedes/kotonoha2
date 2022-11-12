@@ -68,7 +68,7 @@ Rails.application.configure do
   config.action_mailer.perform_caching = false
 
   #メール送れなかったから追加
-  config.action_mailer.default_url_options = { protocol: 'https', host:'https://kotonoha.onrender.com/' }
+  config.action_mailer.default_url_options = { :host => 'https://kotonoha.onrender.com/' }
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
