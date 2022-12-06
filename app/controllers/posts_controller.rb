@@ -22,6 +22,7 @@ class PostsController < ApplicationController
     if @post.save
       @receiver.received_at = Time.current
       @post.create_notification_by(current_user)
+      @receiver.save
       flash[:notice] = "手紙が作られました!"
       redirect_to root_path
     else
