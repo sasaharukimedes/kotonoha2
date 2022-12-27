@@ -58,7 +58,6 @@ development:
 test:
   <<: *default
   database: k_test
-  host: <%= ENV.fetch("DB_HOST") { "localhost" } %>
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -68,6 +67,8 @@ test:
 # variable when you boot the app. For example:
 #
 #   DATABASE_URL="postgres://myuser:mypass@localhost/somedatabase"
+#   postgres~~~はここにくる
+
 #
 # If the connection URL is provided in the special DATABASE_URL environment
 # variable, Rails will automatically merge its configuration values on top of
@@ -85,3 +86,5 @@ production:
   database: k_production
   username: <%= ENV["K_DATABASE_USERNAME"] %>
   password: <%= ENV["K_DATABASE_PASSWORD"] %>
+
+  #url: <%= ENV["DATABASE_URL"] %>

@@ -85,15 +85,15 @@ Rails.application.configure do
     :enable_starttls_auto => true
   }
 
-  config.action_mailer.smtp_settings = {
-    address:"smtp.gmail.com",
-    domain: 'smtp.gmail.com',
-    port:587,
-    user_name: ENV['WELCOME_MAILER_ADDRESS'],
-    password: ENV['WELCOME_MAILER_PASSWORD_DEPLOY'],
-    authentication: :login,
-    openssl_verify_mode: 'none',
-    enable_starttls_auto: true
+  #config.action_mailer.smtp_settings = {
+    #address:"smtp.gmail.com",
+    #domain: 'smtp.gmail.com',
+    #port:587,
+    #user_name: ENV['WELCOME_MAILER_ADDRESS'],
+    #password: ENV['WELCOME_MAILER_PASSWORD_DEPLOY'],
+    #authentication: :login,
+    #openssl_verify_mode: 'none',
+    #enable_starttls_auto: true
   }
 
   # Ignore bad email addresses and do not raise email delivery errors.

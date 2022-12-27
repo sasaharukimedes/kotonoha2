@@ -29,5 +29,10 @@ module K
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+
+    #https://qiita.com/koki_73/items/60b327a586129d157f38参考にした
+    #なくてもデプロイ自体はできていた。
+    config.hosts << 'https://kotonoha.onrender.com'
+
   end
 end

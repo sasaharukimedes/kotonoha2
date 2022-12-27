@@ -20,7 +20,7 @@ require 'rspec/rails'
 # directory. Alternatively, in the individual `*_spec.rb` files, manually
 # require only the support files necessary.
 #
-# Dir[Rails.root.join('spec', 'support', '**', '*.rb')].sort.each { |f| require f }
+Dir[Rails.root.join('spec', 'support', '**', '*.rb')].sort.each { |f| require f }
 
 # Checks for pending migrations and applies them before tests are run.
 # If you are not using ActiveRecord, you can remove these lines.
@@ -29,6 +29,14 @@ begin
 rescue ActiveRecord::PendingMigrationError => e
   abort e.to_s.strip
 end
+
+#追加分
+#https://qiita.com/HiMinmeg/items/37a59cd266c63330797a
+#参考にした
+require'devise'
+require 'capybara/rspec'
+
+
 RSpec.configure do |config|
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
@@ -69,6 +77,16 @@ RSpec.configure do |config|
   config.before :all do
     FactoryBot.reload
   end
+
+  config.before(:each, type: :system) do
+    # Spec実行時、ブラウザが自動で立ち上がり挙動を確認できる
+    # driven_by(:selenium_chrome)
+
+    # Spec実行時、ブラウザOFF
+    driven_by(:selenium_chrome_headless)
+  end
+
+
 
 
 end

@@ -6,12 +6,12 @@ RSpec.describe User, type: :system do
   let(:alice) {create(:alice)}
 
   describe 'User CRUD' do
-    describe 'before sign in' do
+    describe 'before log in' do
       describe 'sign in as new user' do
-        context 'sign_in form is valid' do
+        context 'sign in form is valid' do
           it "successed with sign in" do
             visit new_user_registration_path
-            fill_in 'user[name]', with: 'Alice'
+            fill_in 'user[name]', with: 'person#{n}'
             fill_in 'user[birthday]', with: '001996-11-09'
             fill_in 'user[email]', with: 'alice@example.com'
             fill_in 'user[password]', with: 'Password'
@@ -22,11 +22,8 @@ RSpec.describe User, type: :system do
             expect(page).to have_content "本人確認用のメールを送信しました。メール内のリンクからアカウントを有効化させてください。"
             #ようやくできた、ルートとロケールに注意してね
           end
-
         end
       end
     end
   end
-
-
 end
