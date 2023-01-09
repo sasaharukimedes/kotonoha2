@@ -22,4 +22,14 @@ FactoryBot.define do
     sequence(:received_at) {|n| "2020, 01, 0#{n}"}
     confirmed_at {Date.today}
   end
+
+  factory :other_user, class: User do
+    sequence(:name) { |n| "other_person#{n}" }
+    sequence(:email) { |n| "other_person#{n}@example.com" }
+    birthday {"001990-01-01"}
+    password { 'password' }
+    password_confirmation { 'password' }
+    sequence(:received_at) {|n| "2021, 01, 0#{n}"}
+    confirmed_at {Date.today}
+  end
 end

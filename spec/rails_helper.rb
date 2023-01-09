@@ -35,6 +35,7 @@ end
 #参考にした
 require'devise'
 require 'capybara/rspec'
+require 'rspec/request_describer'
 
 
 RSpec.configure do |config|
@@ -86,6 +87,8 @@ RSpec.configure do |config|
     driven_by(:selenium_chrome_headless)
   end
 
+  config.include RSpec::RequestDescriber, type: :request
+  config.include Devise::Test::IntegrationHelpers, type: :request
 
 
 
