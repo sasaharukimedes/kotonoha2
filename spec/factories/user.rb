@@ -19,7 +19,7 @@ FactoryBot.define do
     birthday {"001990-01-01"}
     password { 'password' }
     password_confirmation { 'password' }
-    sequence(:received_at) {|n| "2020, 01, 0#{n}"}
+    sequence(:received_at) {|n| "2023, 01, 0#{n}"}
     confirmed_at {Date.today}
   end
 
