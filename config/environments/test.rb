@@ -62,7 +62,8 @@ Rails.application.configure do
 
   #追加分
   #https://qiita.com/kodai_0122/items/67c6d390f18698950440
-  config.hosts << "127.0.0.1"
+  #config.hosts << "127.0.0.1"
+  config.hosts << '.example.com'
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 
 end
