@@ -13,10 +13,6 @@ class PostsController < ApplicationController
     @post = Post.new
   end
 
-  def receiver (user)
-    @receiver = User.where.not(id:current_user.id).order(:received_at).first
-  end
-
   def create
     @post = Post.new(post_params)
     @post.user_id = current_user.id
