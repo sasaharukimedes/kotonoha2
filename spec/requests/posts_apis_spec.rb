@@ -9,9 +9,7 @@ RSpec.describe "PostsApis", type: :request do
   end
 
   #https://qiita.com/nakachan1994/items/f62cd4d93c061e3fa6df参考
-  3.times do
-    let!(:post) {create(:post, user_id: @user.id , sender_id: @user.id, receiver_id: @receiver.id)}
-  end
+  let!(:posts) { create_list(:post, 3, user_id: @user.id , sender_id: @user.id, receiver_id: @receiver.id) }
 
   #let!(:post) {create(:post, user_id: other_user.id , sender_id: other_user.id, receiver:user, receiver_id: other_user.id)}
 
@@ -32,7 +30,7 @@ RSpec.describe "PostsApis", type: :request do
 
     #ポストの作成ののち、received_atが更新されているのか確認
     it "is expected that received_at is updated" do
-      #p Post.all
+      p Post.all
       #p User.all.order(received_at: :desc)
     end
 
