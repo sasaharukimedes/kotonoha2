@@ -25,6 +25,7 @@ RSpec.describe "PostsApis", type: :request do
     it "returns http success" do
       sign_in @user
       get new_post_path
+      get new_post_path
       expect(response).to have_http_status(:success)
     end
 
