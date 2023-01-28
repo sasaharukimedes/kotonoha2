@@ -34,8 +34,13 @@ RSpec.describe "PostsApis", type: :request do
         :content => "content content",
         :from => "from from"
       }}
+      post "/posts", :params => {:post => {
+        :dear => "dear2 dear2" ,
+        :content => "content2 content2",
+        :from => "from2 from2"
+      }}
       p Post.all
-      expect(response).to have_http_status(:success)
+      expect(response.status).to eq 302
     end
   end
 
