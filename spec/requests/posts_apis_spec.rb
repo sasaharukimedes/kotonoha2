@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe "PostsApis", type: :request do
   let(:current_user){ create :user }
-  
+
   before do
     create_list :user, 3
   end
@@ -25,7 +25,7 @@ RSpec.describe "PostsApis", type: :request do
   #end
 
   describe "POST / create" do
-    it "returns http success" do
+    it "means that received_at is updated successfully" do
       sign_in current_user
       receiver1 = User.where.not(id: current_user.id).order(:received_at).first
       post "/posts", :params => {:post => {
