@@ -1,12 +1,10 @@
 require 'rails_helper'
 
 RSpec.describe "PostsApis", type: :request do
-
-  before(:each) do
-    4.times do |user|
-      @user = create(:user)
-    end
-    @receiver = User.where.not(id:@user.id).order(:received_at).first
+  let(:current_user){ create :user }
+  
+  before do
+    create_list :user, 3
   end
 
   #https://qiita.com/nakachan1994/items/f62cd4d93c061e3fa6df参考
@@ -28,22 +26,26 @@ RSpec.describe "PostsApis", type: :request do
 
   describe "POST / create" do
     it "returns http success" do
-      sign_in @user
+      sign_in current_user
+      receiver1 = User.where.not(id: current_user.id).order(:received_at).first
       post "/posts", :params => {:post => {
         :dear => "dear dear" ,
         :content => "content content",
         :from => "from from"
       }}
+      post1 = Post.last
+      expect(post1.receiver_id).to eq receiver1.id
+
+      receiver2 = User.where.not(id: current_user.id).order(:received_at).first
+      expect(receiver1.id).not_to eq receiver2.id
       post "/posts", :params => {:post => {
         :dear => "dear2 dear2" ,
         :content => "content2 content2",
         :from => "from2 from2"
       }}
-      p Post.all
-      expect(response.status).to eq 302
+      post2 = Post.last
+      expect(post2.receiver_id).to eq receiver2.id
     end
   end
-
-
 end
 
