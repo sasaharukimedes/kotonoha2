@@ -32,7 +32,7 @@ module K
 
     #https://qiita.com/koki_73/items/60b327a586129d157f38参考にした
     #なくてもデプロイ自体はできていた。
-    config.hosts << 'https://kotonoha.onrender.com'
+    #config.hosts << 'https://kotonoha.onrender.com'
 
   end
 end
