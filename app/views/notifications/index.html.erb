@@ -3,17 +3,15 @@
 <div class="notification notifications-index">
 
   <h1 class="form-heading">手紙を読む</h1>
-  <% @notifications.each do |notification| %>
-    <div class="notifications-index-item">
+  <div class="notifications-index-item">
+    <% @notifications.each do |notification| %>
       <% case notification.action %>
       <% when "post" %>
         <%= link_to(notification.post.dear, "/posts/#{notification.post.id}") %> <br>
       <% when "reply" %>
         <%= link_to(notification.reply.dear, "/replies/#{notification.reply.id}") %> <br>
-      <% else %>
-        <p>手紙はまだ来ていません</p>
       <% end %>
-    </div>
-  <% end %>
-
+    <% end %>
+    <%= link_to("開発者より", "announcement") %>
+  </div>
 </div>

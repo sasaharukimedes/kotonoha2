@@ -8,6 +8,7 @@ Rails.application.routes.draw do
 
   root 'pages#play'
   get 'play', to: 'pages#play'
+  get 'announcement', to: 'pages#announcement'
 
   resources :posts, shallow: true do
     resources :replies

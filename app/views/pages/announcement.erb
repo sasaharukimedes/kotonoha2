@@ -1,0 +1,18 @@
+<% provide(:title, "Announcement") %>
+
+<div class="post posts-show">
+  <div class="posts-show-item">
+    <p>
+      <span><%= "#{current_user.name}さんへ" %></span>
+      <span><%= "ようこそ、コトノハへ！" %><br>
+      <%= "こんな感じで他の誰かから手紙が来ます。
+      その時は優しい言葉で返してあげてください。
+      そして、あなたが今感じている気持ちを手紙にして、ぜひ書いてみてください。
+      きっと誰かがお返事をくれますよ。" %>
+      </span>
+      <span><%= "開発者より" %><br>
+      <%= current_user.created_at.strftime("%Y年%m月%d日 %H:%M") %></span>
+    </p>
+  </div>
+</div>
+
