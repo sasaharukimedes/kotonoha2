@@ -18,7 +18,9 @@ class RepliesController < ApplicationController
     @reply = Reply.new(reply_params)
     @post = Post.find(params[:post_id])
     @reply.post_id = @post.id
-    @receiver = User.where(id:@reply.post.user_id)
+    #@receiver = User.where(id:@reply.post.user_id)
+    #大久保さんに聞いたやつ
+    @receiver = User.find_by!(id:@reply.post.user_id)
     if @reply.save
       #通知メソッドの呼び出し
       @reply.create_notification_by(current_user)
