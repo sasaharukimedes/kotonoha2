@@ -10,9 +10,8 @@
         <%= link_to(notification.post.dear, "/posts/#{notification.post.id}") %> <br>
       <% when "reply" %>
         <%= link_to(notification.reply.dear, "/replies/#{notification.reply.id}") %> <br>
-      <% else %>
-        <%= link_to("開発者より", "announcement") %>
       <% end %>
     <% end %>
+    <%= link_to("開発者より", "announcement") %>
   </div>
 </div>

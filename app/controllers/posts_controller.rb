@@ -24,6 +24,7 @@ class PostsController < ApplicationController
       @post.create_notification_by(current_user)
       @receiver.save
       flash[:notice] = "手紙が作られました!"
+      NotificationMailer.notification_email(@receiver).deliver
       redirect_to root_path
     else
       render "new"

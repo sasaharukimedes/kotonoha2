@@ -1,6 +1,16 @@
 <% provide(:title, "ReadLetter") %>
 
 <div class="reply replies-show">
+  <h3 class="form-heading">あなたの手紙</h3>
+  <div class="replies-show-item">
+    <p>
+      <span><%= @reply.post.dear %></span>
+      <span><%= @reply.post.content %></span>
+      <span><%=  @reply.post.from %><br>
+      <%= @reply.post.created_at.strftime("%Y年%m月%d日 %H:%M") %></span>
+    </p>
+  </div>
+  <h3 class="form-heading">もらったお返事</h3>
   <div class="replies-show-item">
     <p>
       <span><%= @reply.dear %></span>
