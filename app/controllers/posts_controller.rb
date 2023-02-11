@@ -15,7 +15,6 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
-    @post.user_id = current_user.id
     @post.sender_id = current_user.id
     @receiver = User.where.not(id:current_user.id).order(:received_at).first
     @post.receiver_id = @receiver.id
@@ -38,6 +37,6 @@ class PostsController < ApplicationController
 
     private
         def post_params
-          params.require(:post).permit(:dear, :content, :from, :sender_id, :receiver_id, :user_id)
+          params.require(:post).permit(:dear, :content, :from, :sender_id, :receiver_id)
         end
 end

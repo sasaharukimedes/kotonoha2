@@ -3,6 +3,7 @@ class Post < ApplicationRecord
   has_one :reply, dependent: :destroy
   has_many :notifications, dependent: :destroy
   belongs_to :receiver, class_name: 'User'
+  belongs_to :sender, class_name: 'User'
 
   #optionalは後々ユーザー2人以上でテストできるようになったら消す
 
@@ -15,7 +16,6 @@ class Post < ApplicationRecord
                     length:{maximum:25}
   validates :sender_id, presence: true
   validates :receiver_id, presence: true
-  validates :user_id, presence: true
 
 
   #いったんこっちでやる
