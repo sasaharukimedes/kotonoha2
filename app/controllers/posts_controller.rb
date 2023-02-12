@@ -15,7 +15,8 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
-    @post.sender_id = current_user.id
+    @sender = current_user
+    @post.sender_id = @sender.id
     @receiver = User.where.not(id:current_user.id).order(:received_at).first
     @post.receiver_id = @receiver.id
     if @post.save
