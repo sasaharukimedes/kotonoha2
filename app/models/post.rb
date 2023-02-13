@@ -16,6 +16,8 @@ class Post < ApplicationRecord
                     length:{maximum:25}
   validates :sender_id, presence: true
   validates :receiver_id, presence: true
+  validates :sender_archives, inclusion: {in: [true, false]}
+  validates :receiver_archives, inclusion: {in: [true, false]}
 
 
   #いったんこっちでやる

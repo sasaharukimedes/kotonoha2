@@ -9,6 +9,8 @@ class Reply < ApplicationRecord
   validates :from, presence: true,
                     length:{maximum:25}
   validates :post_id, presence: true
+  validates :sender_archives, inclusion: {in: [true, false]}
+  validates :receiver_archives, inclusion: {in: [true, false]}
 
   #いったんこっちでやる
   def create_notification_by(current_user)
