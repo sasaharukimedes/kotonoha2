@@ -7,9 +7,15 @@
     <% @notifications.each do |notification| %>
       <% case notification.action %>
       <% when "post" %>
-        <%= link_to(notification.post.dear, "/posts/#{notification.post.id}") %> <br>
+        <% unless post.receiver_archives %>
+          <%= link_to(notification.post.dear, "/posts/#{notification.post.id}") %> <br>
+          <%= button_to "削除ボタン", archive_path(post), method: :put %>
+        <%end%>
       <% when "reply" %>
-        <%= link_to(notification.reply.dear, "/replies/#{notification.reply.id}") %> <br>
+        <% unless reply.receiver_archives %>
+          <%= link_to(notification.reply.dear, "/replies/#{notification.reply.id}") %> <br>
+          <%= button_to "削除ボタン", archive_path(reply), method: :put %>
+        <% end %>
       <% end %>
     <% end %>
     <%= link_to("開発者より", "announcement") %>

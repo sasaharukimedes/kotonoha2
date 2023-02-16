@@ -1,8 +1,14 @@
 class RepliesController < ApplicationController
   before_action :authenticate_user!
 
-  def index
-    @replies = Reply.all
+  def archive
+    @reply = Reply.find(params[:id])
+    if reply.post.sender_id = current_user.id
+      @reply.update(receiver_archives: true)
+    else
+      @reply.update(sender_archives: true)
+    end
+    redirect_to notifications_path
   end
 
   def show
@@ -18,9 +24,9 @@ class RepliesController < ApplicationController
     @reply = Reply.new(reply_params)
     @post = Post.find(params[:post_id])
     @reply.post_id = @post.id
-    #@receiver = User.where(id:@reply.post.user_id)
+    #@receiver = User.where(id:@reply.post.sender_id)
     #大久保さんに聞いたやつ
-    #@receiver = User.find_by!(id:@reply.post.user_id)
+    #@receiver = User.find_by!(id:@reply.post.sender_id)
     @receiver = @reply.post.user
     if @reply.save
       #通知メソッドの呼び出し
@@ -42,6 +48,6 @@ class RepliesController < ApplicationController
 
       private
         def reply_params
-          params.require(:reply).permit(:dear, :content, :from, :post_id)
+          params.require(:reply).permit(:dear, :content, :from, :post_id, :sender_archives, :receiver_archives)
         end
 end
