@@ -1,5 +1,5 @@
 class Post < ApplicationRecord
-  belongs_to :user #, optional: true
+  #belongs_to :user , optional: true
   has_one :reply, dependent: :destroy
   has_many :notifications, dependent: :destroy
   belongs_to :receiver, class_name: 'User'
